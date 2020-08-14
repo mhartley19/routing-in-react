@@ -5,24 +5,32 @@ import  Welcome  from "./components/Welcome"
 import NotFound from './components/NotFound'
 import { Route, Link, Switch, useParams } from 'react-router-dom'
 
-const Name = (props) =>{
-  const params = useParams()
-  console.log ({props, params})
-  return (<h1>hello</h1>)
-}
+
+  
+
+
 
 // const params = () => (useParams)
 
 class App extends React.Component {
-  render(){
+  constructor(props){
+    super(props)
+  }
+  render(props){
+
   return (
     <>
+  
+    
     <Switch>
-      <Route exact path = '/'>
+      <Route exact path = '/' >
         <HomePage />
       </Route>
-      <Route path ="/welcome/:Name">
-        <Welcome name="Nobody" />
+      <Route path ="/welcome/:name">
+      <Welcome/>
+      </Route>
+      <Route path = "/welcome">
+      <Welcome name ="Mike"/>
       </Route>
       <Route path="*">
       <NotFound />
