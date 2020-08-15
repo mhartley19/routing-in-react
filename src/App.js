@@ -20,17 +20,15 @@ class App extends React.Component {
 
   return (
     <>
-  
+     
     
     <Switch>
       <Route exact path = '/' >
-        <HomePage />
+      <Welcome name="Mike"/>
+      <Link to='/welcome/:name'>Name Selector</Link>
       </Route>
       <Route path ="/welcome/:name">
       <Welcome/>
-      </Route>
-      <Route path = "/welcome">
-      <Welcome name ="Mike"/>
       </Route>
       <Route path="*">
       <NotFound />
